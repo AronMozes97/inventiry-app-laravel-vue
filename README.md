@@ -15,7 +15,7 @@
 
 ✅ Create `Part` model with migration
 - `name` (required)
-- `serialnumber` (required)
+- `serial_number` (required)
 - `car_id` (foreign key to `Car`)
 
 ✅ Define **One-to-Many** relationship (`Car` → `Part`)

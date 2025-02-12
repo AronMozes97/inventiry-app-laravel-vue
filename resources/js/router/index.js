@@ -1,13 +1,20 @@
 import {createRouter, createWebHistory} from "vue-router";
 
-import HomePage from "@/components/HomePage.vue";
+import CarList from "@/components/Car/CarList.vue";
+import CarEdit from "@/components/Car/CarEdit.vue";
 import NotFoundPage from "@/components/NotFoundPage.vue";
+
 
 const routes = [
     {
         path: "/",
-        name: "Home",
-        component: HomePage
+        name: "CarList",
+        component: CarList
+    },
+    {
+        path: "/car/edit/:id",
+        name: "CarEdit",
+        component: CarEdit
     },
     {
         path: "/:pathMatch(.*)*",
@@ -18,6 +25,7 @@ const routes = [
 
 const router = createRouter({
     history: createWebHistory(),
+    linkActiveClass: "active",
     routes
 })
 
