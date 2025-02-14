@@ -30,8 +30,8 @@ class CarController extends Controller
         $car = Car::create($validatedData);
 
         return response()->json([
-            'message' => 'Car created successfully',
-            'car' => $car
+                'message' => 'Car created successfully',
+                'car' => $car
             ]
         );
     }

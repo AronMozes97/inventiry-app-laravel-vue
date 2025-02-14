@@ -71,7 +71,9 @@ export default {
             <label for="car-name" class="form-label">Car</label>
             <select class="form-select" aria-label="Default select example" v-model="part.car_id">
                 <option selected :value="null">Choose one...</option>
-                <option v-for="car in this.cars" :key="car.id" :value="car.id">{{ car.name }} - {{ car.registration_number }}</option>
+                <option v-for="car in this.cars" :key="car.id" :value="car.id">
+                    {{ car.name }} - {{ car.registration_number }}
+                </option>
             </select>
 
         </div>

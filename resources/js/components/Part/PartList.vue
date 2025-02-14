@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default {
     name: "PartList",
-    data(){
+    data() {
         return {
             parts: [],
             successAlert: false,
@@ -33,16 +33,15 @@ export default {
     },
     methods: {
         async fetchParts() {
-            try{
+            try {
                 const response = await axios.get('/parts');
                 this.parts = response.data;
                 this.noPartYet = this.parts.length < 1;
-            }catch (error) {
+            } catch (error) {
                 console.error('Error fetching parts:' + error);
             }
         },
-        showSuccessAlert(msg)
-        {
+        showSuccessAlert(msg) {
             this.successAlert = true;
 
             this.successAlertMsg = msg;
@@ -79,13 +78,14 @@ export default {
     <div v-if="this.successAlert" class="alert alert-success" role="alert">
         {{ this.successAlertMsg }}
     </div>
-    <div  v-if="noPartYet" class="col-12 d-flex justify-content-center">
+    <div v-if="noPartYet" class="col-12 d-flex justify-content-center">
         <h1>Create part first with this
             <RouterLink :to="{name: 'PartCreate'}" class="text-info">
                 link
-            </RouterLink></h1>
+            </RouterLink>
+        </h1>
     </div>
-    <div v-if="!noPartYet" class="mb-3" >
+    <div v-if="!noPartYet" class="mb-3">
         <label for="search" class="form-label">Filter Parts</label>
         <input
             type="text"

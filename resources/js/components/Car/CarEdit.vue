@@ -33,8 +33,7 @@ export default {
                 console.error('Error fetching car:', error);
             }
         },
-        showSuccessAlert(msg)
-        {
+        showSuccessAlert(msg) {
             this.successAlert = true;
 
             this.successAlertMsg = msg;
@@ -79,19 +78,19 @@ export default {
 
                 await this.fetchCar(this.car.id);
                 await this.fetchAvailableParts();
-            }catch (error) {
+            } catch (error) {
                 console.error('Error removing part:', error);
             }
         },
-        async fetchAvailableParts(){
+        async fetchAvailableParts() {
             try {
                 const response = await axios.get('/parts/get/withoutCar');
                 this.parts = response.data;
-            }catch (error) {
+            } catch (error) {
                 console.error('Error fetching parts:', error);
             }
         },
-        async addPart(){
+        async addPart() {
             try {
                 const selectedPartId = $("#part-selector").val();
 
@@ -105,7 +104,7 @@ export default {
 
                 await this.fetchCar(this.car.id);
                 await this.fetchAvailableParts();
-            }catch (error) {
+            } catch (error) {
                 console.error('Error adding parts:', error);
             }
         },
@@ -184,8 +183,6 @@ export default {
         </tr>
         </tbody>
     </table>
-
-
 </template>
 
 <style scoped>

@@ -25,8 +25,7 @@ export default {
                 console.error('Error fetching cars:', error);
             }
         },
-        showSuccessAlert(msg)
-        {
+        showSuccessAlert(msg) {
             this.successAlert = true;
 
             this.successAlertMsg = msg;
@@ -72,11 +71,12 @@ export default {
     <div v-if="this.successAlert" class="alert alert-success" role="alert">
         {{ this.successAlertMsg }}
     </div>
-    <div  v-if="noCarYet" class="col-12 d-flex justify-content-center">
+    <div v-if="noCarYet" class="col-12 d-flex justify-content-center">
         <h1>Create a car first with this
             <RouterLink :to="{name: 'CarCreate'}" class="text-info">
                 link
-            </RouterLink></h1>
+            </RouterLink>
+        </h1>
     </div>
     <div class="accordion" id="car-accordion">
         <div v-for="(car,index) in this.cars" :key="car.id" class="accordion-item">
@@ -109,7 +109,7 @@ export default {
                             <span class="text-dark"><strong>Connected parts</strong></span>
                             <ul>
                                 <li v-for="part in car.parts" :key="part.id">
-                                    {{ part.name }} - {{ part.serial_number}}
+                                    {{ part.name }} - {{ part.serial_number }}
                                 </li>
                             </ul>
                         </div>

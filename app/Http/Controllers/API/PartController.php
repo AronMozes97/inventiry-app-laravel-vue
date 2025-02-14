@@ -4,10 +4,8 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PartRequest;
-use App\Models\Car;
 use App\Models\Part;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 class PartController extends Controller
 {
@@ -32,8 +30,8 @@ class PartController extends Controller
         $part = Part::create($validatedData);
 
         return response()->json([
-            'message'   => 'Part created successfully',
-            'part'      => $part,
+            'message' => 'Part created successfully',
+            'part' => $part,
         ]);
     }
 

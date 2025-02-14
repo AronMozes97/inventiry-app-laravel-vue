@@ -52,7 +52,7 @@ export default {
                 const response = await axios.get(`/parts/${id}`);
                 this.part = response.data;
                 console.table(this.part);
-            }catch (error) {
+            } catch (error) {
                 console.error('Error fetching part:', error);
             }
         },
@@ -64,8 +64,7 @@ export default {
                 console.error('Error fetching cars:', error);
             }
         },
-        showSuccessAlert(msg)
-        {
+        showSuccessAlert(msg) {
             this.successAlert = true;
 
             this.successAlertMsg = msg;
@@ -95,7 +94,9 @@ export default {
         <div class="mb-3">
             <select class="form-select" aria-label="Default select example" v-model="part.car_id">
                 <option selected :value="null">Choose one...</option>
-                <option v-for="car in this.cars" :key="car.id" :value="car.id">{{ car.name }} - {{ car.registration_number }}</option>
+                <option v-for="car in this.cars" :key="car.id" :value="car.id">
+                    {{ car.name }} - {{ car.registration_number }}
+                </option>
             </select>
 
         </div>
