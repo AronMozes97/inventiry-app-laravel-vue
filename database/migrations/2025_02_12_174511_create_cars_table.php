@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable(false);
-            $table->integer('registration_number')->nullable();
+            $table->integer('registration_number')->unique()->nullable();
             $table->boolean('is_registered')->default(false);
             $table->timestamps();
             $table->softDeletes();

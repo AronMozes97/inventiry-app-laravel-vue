@@ -16,6 +16,26 @@
                             Car list
                         </RouterLink>
                     </li>
+                    <li class="nav-item">
+                        <RouterLink :to="{name: 'CarCreate'}" class="nav-link">
+                            Create car
+                        </RouterLink>
+                    </li>
+                    <li class="nav-item">
+                        <RouterLink :to="{name: 'CarArchive'}" class="nav-link">
+                            Car archive
+                        </RouterLink>
+                    </li>
+                    <li class="nav-item">
+                        <RouterLink :to="{name: 'PartList'}" class="nav-link">
+                            Part list
+                        </RouterLink>
+                    </li>
+                    <li class="nav-item">
+                        <RouterLink :to="{name: 'PartCreate'}" class="nav-link">
+                            Create part
+                        </RouterLink>
+                    </li>
                 </ul>
             </div>
         </div>

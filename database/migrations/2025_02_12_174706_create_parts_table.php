@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('parts', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable(false);
-            $table->integer('serial_number')->nullable(false);
+            $table->string('serial_number')->unique()->nullable(false);
             $table->foreignId('car_id')
+                ->nullable()
                 ->constrained('cars')
                 ->cascadeOnDelete();
             $table->timestamps();
